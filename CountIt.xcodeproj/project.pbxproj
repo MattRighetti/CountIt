@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F6D87DACF76512C89110D6 /* Pods_CountIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC4BF16121CA2C54E1F4F90 /* Pods_CountIt.framework */; };
 		C9100507214D1B4500BB1C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9100506214D1B4500BB1C80 /* AppDelegate.swift */; };
-		C9100509214D1B4500BB1C80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9100508214D1B4500BB1C80 /* ViewController.swift */; };
 		C910050C214D1B4500BB1C80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C910050A214D1B4500BB1C80 /* Main.storyboard */; };
 		C910050E214D1B4600BB1C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C910050D214D1B4600BB1C80 /* Assets.xcassets */; };
 		C9100511214D1B4600BB1C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */; };
+		C910051F214D1BF000BB1C80 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910051E214D1BF000BB1C80 /* Counter.swift */; };
+		C910052A214D39E100BB1C80 /* CounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9100529214D39E100BB1C80 /* CounterCell.swift */; };
+		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C9100503214D1B4500BB1C80 /* CountIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9100506214D1B4500BB1C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9100508214D1B4500BB1C80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C910050B214D1B4500BB1C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C910050D214D1B4600BB1C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9100510214D1B4600BB1C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9100512214D1B4600BB1C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C910051E214D1BF000BB1C80 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		C9100529214D39E100BB1C80 /* CounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCell.swift; sourceTree = "<group>"; };
+		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
+		D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.release.xcconfig"; sourceTree = "<group>"; };
+		E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.debug.xcconfig"; sourceTree = "<group>"; };
+		FFC4BF16121CA2C54E1F4F90 /* Pods_CountIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F6D87DACF76512C89110D6 /* Pods_CountIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				C9100505214D1B4500BB1C80 /* CountIt */,
 				C9100504214D1B4500BB1C80 /* Products */,
+				FA34BAE1F2CECB5800934BC4 /* Pods */,
+				FBACCEABF432A41ED40D4241 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,73 @@
 		C9100505214D1B4500BB1C80 /* CountIt */ = {
 			isa = PBXGroup;
 			children = (
-				C9100506214D1B4500BB1C80 /* AppDelegate.swift */,
-				C9100508214D1B4500BB1C80 /* ViewController.swift */,
-				C910050A214D1B4500BB1C80 /* Main.storyboard */,
-				C910050D214D1B4600BB1C80 /* Assets.xcassets */,
-				C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */,
+				C910051C214D1BDE00BB1C80 /* Model */,
+				C910051B214D1BD200BB1C80 /* View */,
+				C910051D214D1BE300BB1C80 /* Controller */,
+				C910051A214D1BCA00BB1C80 /* Supporting Files */,
 				C9100512214D1B4600BB1C80 /* Info.plist */,
 			);
 			path = CountIt;
+			sourceTree = "<group>";
+		};
+		C910051A214D1BCA00BB1C80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C910050D214D1B4600BB1C80 /* Assets.xcassets */,
+				C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C910051B214D1BD200BB1C80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9100528214D39C300BB1C80 /* CustomCell */,
+				C910050A214D1B4500BB1C80 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C910051C214D1BDE00BB1C80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C910051E214D1BF000BB1C80 /* Counter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C910051D214D1BE300BB1C80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9100506214D1B4500BB1C80 /* AppDelegate.swift */,
+				C988E2A821536496001A01B9 /* CountItViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9100528214D39C300BB1C80 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9100529214D39E100BB1C80 /* CounterCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		FA34BAE1F2CECB5800934BC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */,
+				D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FBACCEABF432A41ED40D4241 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4BF16121CA2C54E1F4F90 /* Pods_CountIt.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9100515214D1B4600BB1C80 /* Build configuration list for PBXNativeTarget "CountIt" */;
 			buildPhases = (
+				2E14B24D7F21DE067E155A8F /* [CP] Check Pods Manifest.lock */,
 				C91004FF214D1B4500BB1C80 /* Sources */,
 				C9100500214D1B4500BB1C80 /* Frameworks */,
 				C9100501214D1B4500BB1C80 /* Resources */,
+				8531CF7A4D2E524132D5A836 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +202,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E14B24D7F21DE067E155A8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CountIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8531CF7A4D2E524132D5A836 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CountIt/Pods-CountIt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CountIt/Pods-CountIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C91004FF214D1B4500BB1C80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9100509214D1B4500BB1C80 /* ViewController.swift in Sources */,
+				C910052A214D39E100BB1C80 /* CounterCell.swift in Sources */,
 				C9100507214D1B4500BB1C80 /* AppDelegate.swift in Sources */,
+				C910051F214D1BF000BB1C80 /* Counter.swift in Sources */,
+				C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +395,7 @@
 		};
 		C9100516214D1B4600BB1C80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +414,7 @@
 		};
 		C9100517214D1B4600BB1C80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_CountIt {
+  umbrella header "Pods-CountIt-umbrella.h"
+
+  export *
+  module * { export * }
+}
