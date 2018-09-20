@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Count It View Controller-->
+        <!--CountIt!-->
         <scene sceneID="QQJ-lp-zVf">
             <objects>
-                <viewController id="4nk-oV-0K5" customClass="CountItViewController" customModule="CountIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3X1-iw-he6" customClass="CounterCell" customModule="CountIt" customModuleProvider="target">
+                <viewController title="CountIt!" id="4nk-oV-0K5" customClass="CountItViewController" customModule="CountIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3X1-iw-he6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="counterCell" rowHeight="90" id="YQv-cN-lLK" customClass="CounterCell" customModule="CountIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCounterCell" rowHeight="90" id="YQv-cN-lLK" customClass="TableViewCounterCell" customModule="CountIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQv-cN-lLK" id="RB6-Q8-5Lh">
@@ -56,6 +56,10 @@
                                                 <constraint firstItem="e3c-8q-eyv" firstAttribute="leading" secondItem="l9j-HX-tJM" secondAttribute="trailing" constant="15" id="nQn-UO-2aX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="counterDays" destination="e3c-8q-eyv" id="kBT-Mq-fLG"/>
+                                            <outlet property="counterTitle" destination="l9j-HX-tJM" id="Emm-9U-Auv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

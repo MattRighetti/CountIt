@@ -12,6 +12,8 @@ class CountItViewController: UIViewController {
     
     @IBOutlet weak var countersTableView: UITableView!
     
+    let cellID = "tableViewCounterCell"
+    
     var counters: [Counter] = [
         Counter(),
         Counter(),
@@ -21,9 +23,13 @@ class CountItViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateArray()
         countersTableView.delegate = self
         countersTableView.dataSource = self
-        countersTableView.register(CounterCell.self, forCellReuseIdentifier: "counterCell")
+        countersTableView.register(TableViewCounterCell.self, forCellReuseIdentifier: cellID)
+    }
+    
+    func populateArray() {
         counters[0].name = "First"
         counters[1].name = "Second"
         counters[2].name = "Third"
@@ -33,14 +39,21 @@ class CountItViewController: UIViewController {
 
 extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return counters.count
     }
     
+    // Number of sections in a row
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // Populate row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let counterCell = countersTableView.dequeueReusableCell(withIdentifier: "counterCell") as! CounterCell
-        counterCell.counterNameLabel.text = counters[indexPath.row].name
-        counterCell.daysLeftLabel.text = String(counters[indexPath.row].daysTillDate)
+        let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCounterCell
+        let counterAtCurrentIndexPath = counters[indexPath.row]
+        counterCell.counterTitle?.text = counterAtCurrentIndexPath.name
         return counterCell
     }
     

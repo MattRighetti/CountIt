@@ -13,7 +13,7 @@
 		C910050E214D1B4600BB1C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C910050D214D1B4600BB1C80 /* Assets.xcassets */; };
 		C9100511214D1B4600BB1C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */; };
 		C910051F214D1BF000BB1C80 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910051E214D1BF000BB1C80 /* Counter.swift */; };
-		C910052A214D39E100BB1C80 /* CounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9100529214D39E100BB1C80 /* CounterCell.swift */; };
+		C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */; };
 		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 		C9100510214D1B4600BB1C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9100512214D1B4600BB1C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C910051E214D1BF000BB1C80 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
-		C9100529214D39E100BB1C80 /* CounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCell.swift; sourceTree = "<group>"; };
+		C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCounterCell.swift; sourceTree = "<group>"; };
 		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
 		D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.release.xcconfig"; sourceTree = "<group>"; };
 		E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,8 +86,8 @@
 		C910051B214D1BD200BB1C80 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C9100528214D39C300BB1C80 /* CustomCell */,
 				C910050A214D1B4500BB1C80 /* Main.storyboard */,
+				C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,14 +107,6 @@
 				C988E2A821536496001A01B9 /* CountItViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C9100528214D39C300BB1C80 /* CustomCell */ = {
-			isa = PBXGroup;
-			children = (
-				C9100529214D39E100BB1C80 /* CounterCell.swift */,
-			);
-			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		FA34BAE1F2CECB5800934BC4 /* Pods */ = {
@@ -248,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C910052A214D39E100BB1C80 /* CounterCell.swift in Sources */,
+				C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */,
 				C9100507214D1B4500BB1C80 /* AppDelegate.swift in Sources */,
 				C910051F214D1BF000BB1C80 /* Counter.swift in Sources */,
 				C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */,
