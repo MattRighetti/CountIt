@@ -26,7 +26,6 @@ class CountItViewController: UIViewController {
         populateArray()
         countersTableView.delegate = self
         countersTableView.dataSource = self
-        countersTableView.register(TableViewCounterCell.self, forCellReuseIdentifier: cellID)
     }
     
     func populateArray() {
@@ -53,7 +52,11 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCounterCell
         let counterAtCurrentIndexPath = counters[indexPath.row]
-        counterCell.counterTitle?.text = counterAtCurrentIndexPath.name
+        if let textLabel = counterCell.counterTitle {
+            textLabel.text = counterAtCurrentIndexPath.name
+        } else {
+            print("No textLabel")
+        }
         return counterCell
     }
     
