@@ -7,32 +7,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CountItViewController: UIViewController {
     
     @IBOutlet weak var countersTableView: UITableView!
     
+    let realm = try! Realm()
     let cellID = "tableViewCounterCell"
-    
-    var counters: [Counter] = [
-        Counter(),
-        Counter(),
-        Counter(),
-        Counter()
-    ]
+    var counters: Results<Counter>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateArray()
+        
         countersTableView.delegate = self
         countersTableView.dataSource = self
+        
+        reloadData()
+        print("Ok")
     }
     
-    func populateArray() {
-        counters[0].name = "First"
-        counters[1].name = "Second"
-        counters[2].name = "Third"
-        counters[3].name = "Fourth"
+    override func viewWillAppear(_ animated: Bool) {
+        reloadData()
+        countersTableView.reloadData()
+    }
+    
+    func reloadData() {
+        counters = realm.objects(Counter.self)
     }
 }
 
@@ -40,23 +41,21 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return counters.count
-    }
-    
-    // Number of sections in a row
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if let countersArray = counters {
+            return countersArray.count
+        } else {
+            return 0
+        }
     }
     
     // Populate row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCounterCell
-        let counterAtCurrentIndexPath = counters[indexPath.row]
-        if let textLabel = counterCell.counterTitle {
-            textLabel.text = counterAtCurrentIndexPath.name
-        } else {
-            print("No textLabel")
+        
+        if let counterAtCurrentIndexPath = counters?[indexPath.row] {
+            counterCell.setTitleLabel(withTitle: counterAtCurrentIndexPath.name)
         }
+        
         return counterCell
     }
     
