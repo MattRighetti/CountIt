@@ -22,9 +22,6 @@ class CountItViewController: UIViewController {
         
         countersTableView.delegate = self
         countersTableView.dataSource = self
-        
-        reloadData()
-        print("Ok")
     }
     
     override func viewWillAppear(_ animated: Bool) {
