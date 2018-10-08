@@ -22,6 +22,7 @@ class CountItViewController: UIViewController {
         
         countersTableView.delegate = self
         countersTableView.dataSource = self
+        countersTableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +48,10 @@ class CountItViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        
+    }
 }
 
 extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
@@ -70,6 +75,28 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return counterCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let destVC = storyBoard.instantiateViewController(withIdentifier: "editCounterView") as! CounterEditorViewController
+        destVC.selectedCounter = counters?[indexPath.row]
+        self.navigationController?.pushViewController(destVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            do {
+                if let counterDeleted = counters?[indexPath.row] {
+                    try realm.write {
+                        realm.delete(counterDeleted)
+                    }
+                    countersTableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
     
 }
