@@ -5,7 +5,7 @@
 //  Created by Mattia Righetti on 20/09/2018.
 //  Copyright © 2018 Mattia Righetti. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class TableViewCounterCell: UITableViewCell {

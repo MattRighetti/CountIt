@@ -26,11 +26,26 @@ class CountItViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         reloadData()
+        refreshDates()
         countersTableView.reloadData()
     }
     
     func reloadData() {
         counters = realm.objects(Counter.self)
+    }
+    
+    func refreshDates() {
+        if let counters = counters {
+            for counter in counters {
+                do {
+                    try realm.write {
+                        counter.countDays()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }
 
@@ -47,10 +62,11 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Populate row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TableViewCounterCell
+        let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCounterCell
         
         if let counterAtCurrentIndexPath = counters?[indexPath.row] {
             counterCell.setTitleLabel(withTitle: counterAtCurrentIndexPath.name)
+            counterCell.setDateLabel(withDate: String(counterAtCurrentIndexPath.daysLeft))
         }
         
         return counterCell

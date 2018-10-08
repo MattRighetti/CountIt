@@ -12,6 +12,7 @@ import RealmSwift
 class CreateCounterViewController: UIViewController {
 
     @IBOutlet weak var counterTitleTextField: UITextField!
+    @IBOutlet weak var counterDatePicker: UIDatePicker!
     
     let realm = try! Realm()
     var counters: Results<Counter>?
@@ -26,7 +27,7 @@ class CreateCounterViewController: UIViewController {
             try realm.write {
                 let newCounter = Counter()
                 newCounter.name = counterTitleTextField.text ?? "NotSet"
-                newCounter.tillDate = Date()
+                newCounter.tillDate = counterDatePicker.date
                 realm.add(newCounter)
                 if let navController = self.navigationController {
                     navController.popViewController(animated: true)
