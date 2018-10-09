@@ -12,9 +12,11 @@ import RealmSwift
 class CreateCounterViewController: UIViewController {
 
     @IBOutlet weak var counterTitleTextField: UITextField!
-    @IBOutlet weak var counterDatePicker: UIDatePicker!
+    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var excludeLastSwitch: UISwitch!
+    
+    private var datePicker: UIDatePicker?
     
     let realm = try! Realm()
     var counters: Results<Counter>?
@@ -24,22 +26,38 @@ class CreateCounterViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         addButton.layer.cornerRadius = 8
         counters = realm.objects(Counter.self)
+        
+        datePicker = UIDatePicker()
+        datePicker?.backgroundColor = UIColor.white
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        dateTextField.inputView = datePicker
+    }
+    
+    @objc func dateChanged() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        if let date = datePicker?.date {
+            dateTextField.text = dateFormatter.string(from: date)
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        do {
-            try realm.write {
-                let newCounter = Counter()
-                newCounter.name = counterTitleTextField.text ?? "NotSet"
-                newCounter.tillDate = counterDatePicker.date
-                newCounter.excludeLast = excludeLastSwitch.isOn
-                realm.add(newCounter)
-                if let navController = self.navigationController {
-                    navController.popViewController(animated: true)
+        if !counterTitleTextField.text!.isEmpty {
+            do {
+                try realm.write {
+                    let newCounter = Counter()
+                    newCounter.name = counterTitleTextField.text ?? "NotSet"
+                    newCounter.tillDate = datePicker?.date
+                    newCounter.excludeLast = excludeLastSwitch.isOn
+                    realm.add(newCounter)
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    }
                 }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
     }
 }

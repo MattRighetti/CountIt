@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Nh-Bb-8Xn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Nh-Bb-8Xn">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,7 +67,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L0w-9u-EVW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WLK-Ic-OHV">
+                    <navigationItem key="navigationItem" title="Count It!" id="WLK-Ic-OHV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="KhR-dG-Bbb"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N1E-I8-JYC">
                             <connections>
                                 <segue destination="T0i-an-njC" kind="show" id="D8c-GL-r7j"/>
@@ -91,19 +92,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Counter Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SP7-He-itN">
-                                <rect key="frame" x="47" y="204" width="320" height="30"/>
+                                <rect key="frame" x="69.333333333333343" y="236" width="275.66666666666663" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8k-Uh-HH8">
-                                <rect key="frame" x="47" y="148" width="320" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8k-Uh-HH8">
+                                <rect key="frame" x="69.333333333333343" y="148" width="275.66666666666663" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4I-sp-rtP">
-                                <rect key="frame" x="47" y="764" width="320" height="48"/>
+                                <rect key="frame" x="69.333333333333343" y="764" width="275.66666666666663" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,38 +113,38 @@
                                     <action selector="addButtonPressed:" destination="T0i-an-njC" eventType="touchUpInside" id="IyT-2L-ho8"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="e4R-cO-UNS">
-                                <rect key="frame" x="47" y="242" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="560721921.39595199">
-                                    <!--2018-10-08 20:05:21 +0000-->
-                                </date>
-                            </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Znp-EH-FQO">
-                                <rect key="frame" x="318" y="523" width="51" height="31"/>
+                                <rect key="frame" x="296" y="683" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exclude last day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQJ-1t-MqG">
-                                <rect key="frame" x="47" y="523" width="213" height="30"/>
+                                <rect key="frame" x="69.333333333333329" y="684" width="168.66666666666669" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7g-KD-wFH">
+                                <rect key="frame" x="69.333333333333343" y="299" width="275.66666666666663" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="y7g-KD-wFH" firstAttribute="trailing" secondItem="SP7-He-itN" secondAttribute="trailing" id="7mc-Sh-c2t"/>
                             <constraint firstItem="Znp-EH-FQO" firstAttribute="trailing" secondItem="J8k-Uh-HH8" secondAttribute="trailing" id="C4b-se-2pG"/>
                             <constraint firstItem="TQJ-1t-MqG" firstAttribute="leading" secondItem="J8k-Uh-HH8" secondAttribute="leading" id="EIi-j5-OGe"/>
                             <constraint firstItem="Znp-EH-FQO" firstAttribute="leading" secondItem="TQJ-1t-MqG" secondAttribute="trailing" constant="58" id="EKJ-YM-SNF"/>
-                            <constraint firstItem="e4R-cO-UNS" firstAttribute="leading" secondItem="J8k-Uh-HH8" secondAttribute="leading" id="F7X-nV-uRv"/>
                             <constraint firstItem="J8k-Uh-HH8" firstAttribute="centerX" secondItem="ach-SH-MaY" secondAttribute="centerX" id="IgH-TE-deb"/>
                             <constraint firstItem="J8k-Uh-HH8" firstAttribute="top" secondItem="ach-SH-MaY" secondAttribute="topMargin" constant="60" id="JO1-lB-ABN"/>
-                            <constraint firstItem="e4R-cO-UNS" firstAttribute="trailing" secondItem="J8k-Uh-HH8" secondAttribute="trailing" id="KFL-jn-rj3"/>
-                            <constraint firstItem="SP7-He-itN" firstAttribute="top" secondItem="J8k-Uh-HH8" secondAttribute="bottom" constant="8" symbolic="YES" id="Uci-7O-LlG"/>
+                            <constraint firstItem="y7g-KD-wFH" firstAttribute="leading" secondItem="SP7-He-itN" secondAttribute="leading" id="KHm-r1-drz"/>
+                            <constraint firstItem="y7g-KD-wFH" firstAttribute="top" secondItem="SP7-He-itN" secondAttribute="bottom" constant="33" id="TFJ-JM-pkz"/>
+                            <constraint firstItem="SP7-He-itN" firstAttribute="top" secondItem="J8k-Uh-HH8" secondAttribute="bottom" constant="40" id="Uci-7O-LlG"/>
+                            <constraint firstItem="h4I-sp-rtP" firstAttribute="top" secondItem="Znp-EH-FQO" secondAttribute="bottom" constant="50" id="Vbo-Ff-oik"/>
                             <constraint firstItem="h4I-sp-rtP" firstAttribute="leading" secondItem="J8k-Uh-HH8" secondAttribute="leading" id="Wds-A3-Wjh"/>
-                            <constraint firstItem="e4R-cO-UNS" firstAttribute="top" secondItem="SP7-He-itN" secondAttribute="bottom" constant="8" symbolic="YES" id="dkk-wp-Vak"/>
-                            <constraint firstItem="TQJ-1t-MqG" firstAttribute="top" secondItem="e4R-cO-UNS" secondAttribute="bottom" constant="65" id="ee9-7t-AUx"/>
                             <constraint firstItem="SP7-He-itN" firstAttribute="leading" secondItem="J8k-Uh-HH8" secondAttribute="leading" id="gRN-hR-FkK"/>
+                            <constraint firstItem="h4I-sp-rtP" firstAttribute="top" secondItem="TQJ-1t-MqG" secondAttribute="bottom" constant="50" id="kEs-k4-ghQ"/>
                             <constraint firstItem="h4I-sp-rtP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J8k-Uh-HH8" secondAttribute="trailing" id="kIO-3z-CYc"/>
-                            <constraint firstItem="Znp-EH-FQO" firstAttribute="top" secondItem="e4R-cO-UNS" secondAttribute="bottom" constant="65" id="r93-kj-Mkf"/>
                             <constraint firstAttribute="bottomMargin" secondItem="h4I-sp-rtP" secondAttribute="bottom" constant="50" id="rHq-IF-43w"/>
                             <constraint firstItem="SP7-He-itN" firstAttribute="trailing" secondItem="J8k-Uh-HH8" secondAttribute="trailing" id="www-L5-kBp"/>
                         </constraints>
@@ -151,8 +152,8 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="h4I-sp-rtP" id="kij-DJ-muB"/>
-                        <outlet property="counterDatePicker" destination="e4R-cO-UNS" id="rBa-Ne-tW1"/>
                         <outlet property="counterTitleTextField" destination="SP7-He-itN" id="Sib-J1-gdM"/>
+                        <outlet property="dateTextField" destination="y7g-KD-wFH" id="AYL-DX-Ogk"/>
                         <outlet property="excludeLastSwitch" destination="Znp-EH-FQO" id="dAw-7V-KVA"/>
                     </connections>
                 </viewController>
