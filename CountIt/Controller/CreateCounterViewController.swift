@@ -21,6 +21,7 @@ class CreateCounterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         addButton.layer.cornerRadius = 8
         counters = realm.objects(Counter.self)
     }

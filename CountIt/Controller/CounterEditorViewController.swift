@@ -20,6 +20,7 @@ class CounterEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         loadData()
     }
     

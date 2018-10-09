@@ -19,7 +19,7 @@ class CountItViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         countersTableView.delegate = self
         countersTableView.dataSource = self
         countersTableView.separatorStyle = .none
@@ -49,6 +49,19 @@ class CountItViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - Hide keyboard when backgroud is tapped
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 //MARK: - TableView Methods
