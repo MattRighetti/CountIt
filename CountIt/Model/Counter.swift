@@ -19,6 +19,9 @@ class Counter: Object {
         if let chosenDate = tillDate {
             var calendar = Calendar.current.dateComponents([.day], from: Date.init(), to: chosenDate)
             daysLeft = calendar.day ?? -1
+            if (excludeLast == true && daysLeft > 1) {
+                daysLeft -= 1
+            }
         }
     }
 }

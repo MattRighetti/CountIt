@@ -49,11 +49,9 @@ class CountItViewController: UIViewController {
         }
     }
     
-    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
-        
-    }
 }
 
+//MARK: - TableView Methods
 extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Number of rows

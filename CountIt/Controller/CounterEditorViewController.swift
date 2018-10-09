@@ -11,6 +11,7 @@ import RealmSwift
 import UIKit
 
 class CounterEditorViewController: UIViewController {
+    
     @IBOutlet weak var counterTitleLabel: UILabel!
     @IBOutlet weak var daysLeftLabel: UILabel!
     
