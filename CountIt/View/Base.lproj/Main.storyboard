@@ -59,6 +59,7 @@
                                         <connections>
                                             <outlet property="counterDays" destination="e3c-8q-eyv" id="kBT-Mq-fLG"/>
                                             <outlet property="counterTitle" destination="l9j-HX-tJM" id="Emm-9U-Auv"/>
+                                            <segue destination="23G-rB-4O0" kind="show" identifier="editCounterView" id="Kaq-yR-0Z0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-XG-uS1">
-                                <rect key="frame" x="50" y="169" width="314" height="101"/>
+                                <rect key="frame" x="50" y="213" width="314" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="L52-RT-Q5p"/>
                                 </constraints>

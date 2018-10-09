@@ -75,11 +75,13 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         return counterCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let destVC = storyBoard.instantiateViewController(withIdentifier: "editCounterView") as! CounterEditorViewController
-        destVC.selectedCounter = counters?[indexPath.row]
-        self.navigationController?.pushViewController(destVC, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editCounterView" {
+            let destVC = segue.destination as! CounterEditorViewController
+            if let index = countersTableView.indexPathForSelectedRow {
+                destVC.selectedCounter = counters?[index.row]
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
