@@ -88,15 +88,6 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         return counterCell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "editCounterView" {
-            let destVC = segue.destination as! CounterEditorViewController
-            if let index = countersTableView.indexPathForSelectedRow {
-                destVC.selectedCounter = counters?[index.row]
-            }
-        }
-    }
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             do {

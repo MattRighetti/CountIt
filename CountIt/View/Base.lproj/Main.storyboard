@@ -52,7 +52,6 @@
                                         <connections>
                                             <outlet property="counterDays" destination="e3c-8q-eyv" id="kBT-Mq-fLG"/>
                                             <outlet property="counterTitle" destination="l9j-HX-tJM" id="Emm-9U-Auv"/>
-                                            <segue destination="23G-rB-4O0" kind="show" identifier="editCounterView" id="Kaq-yR-0Z0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -178,56 +177,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmr-Kh-SVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="949.60000000000002" y="141.67916041979012"/>
-        </scene>
-        <!--Counter Editor View Controller-->
-        <scene sceneID="eJu-iG-XP9">
-            <objects>
-                <viewController storyboardIdentifier="editCounterView" id="23G-rB-4O0" customClass="CounterEditorViewController" customModule="CountIt" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ypR-OL-gSz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6f-XG-uS1">
-                                <rect key="frame" x="50" y="213" width="314" height="47.333333333333314"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Left:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb2-gj-ZFu">
-                                <rect key="frame" x="50" y="424" width="314" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scs-dX-7IX">
-                                <rect key="frame" x="50" y="683" width="314" height="59"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="t6f-XG-uS1" secondAttribute="trailing" constant="30" id="HVE-Vu-pgk"/>
-                            <constraint firstItem="Scs-dX-7IX" firstAttribute="leading" secondItem="t6f-XG-uS1" secondAttribute="leading" id="KVT-Cd-ktS"/>
-                            <constraint firstItem="kb2-gj-ZFu" firstAttribute="top" secondItem="t6f-XG-uS1" secondAttribute="bottom" constant="163.66666666666669" id="Op2-EA-miY"/>
-                            <constraint firstItem="Scs-dX-7IX" firstAttribute="trailing" secondItem="t6f-XG-uS1" secondAttribute="trailing" id="QCK-gV-hRu"/>
-                            <constraint firstItem="kb2-gj-ZFu" firstAttribute="trailing" secondItem="t6f-XG-uS1" secondAttribute="trailing" id="ZBV-Sv-FOc"/>
-                            <constraint firstItem="t6f-XG-uS1" firstAttribute="top" secondItem="ypR-OL-gSz" secondAttribute="topMargin" constant="125" id="eoG-J0-vKP"/>
-                            <constraint firstItem="kb2-gj-ZFu" firstAttribute="leading" secondItem="t6f-XG-uS1" secondAttribute="leading" id="jBi-Ac-1rd"/>
-                            <constraint firstItem="t6f-XG-uS1" firstAttribute="leading" secondItem="ypR-OL-gSz" secondAttribute="leadingMargin" constant="30" id="ki4-YO-y2x"/>
-                            <constraint firstItem="Scs-dX-7IX" firstAttribute="top" secondItem="kb2-gj-ZFu" secondAttribute="bottom" constant="211" id="xSh-wt-J9Z"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8Ge-ut-Trc"/>
-                    </view>
-                    <connections>
-                        <outlet property="counterTitleLabel" destination="t6f-XG-uS1" id="hk6-Gm-Ag9"/>
-                        <outlet property="daysLeftLabel" destination="Scs-dX-7IX" id="po9-Zb-tAt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qac-nx-YLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2442.0289855072465" y="-547.09821428571422"/>
         </scene>
     </scenes>
 </document>

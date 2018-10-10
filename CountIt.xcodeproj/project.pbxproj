@@ -16,7 +16,6 @@
 		C9142383216D655A00A300A2 /* DateLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9142382216D655A00A300A2 /* DateLauncher.swift */; };
 		C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */; };
 		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
-		C9971BB4216C15C700C6A785 /* CounterEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9971BB3216C15C700C6A785 /* CounterEditorViewController.swift */; };
 		C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		C9142382216D655A00A300A2 /* DateLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLauncher.swift; sourceTree = "<group>"; };
 		C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCounterCell.swift; sourceTree = "<group>"; };
 		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
-		C9971BB3216C15C700C6A785 /* CounterEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEditorViewController.swift; sourceTree = "<group>"; };
 		C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
 		D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.release.xcconfig"; sourceTree = "<group>"; };
 		E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				C9100506214D1B4500BB1C80 /* AppDelegate.swift */,
 				C988E2A821536496001A01B9 /* CountItViewController.swift */,
 				C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */,
-				C9971BB3216C15C700C6A785 /* CounterEditorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 				C910051F214D1BF000BB1C80 /* Counter.swift in Sources */,
 				C9142383216D655A00A300A2 /* DateLauncher.swift in Sources */,
 				C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */,
-				C9971BB4216C15C700C6A785 /* CounterEditorViewController.swift in Sources */,
 				C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
