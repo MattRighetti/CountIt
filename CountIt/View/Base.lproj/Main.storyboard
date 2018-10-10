@@ -85,7 +85,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L0w-9u-EVW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Count It!" id="WLK-Ic-OHV">
+                    <navigationItem key="navigationItem" id="WLK-Ic-OHV">
                         <barButtonItem key="backBarButtonItem" title="Back" id="KhR-dG-Bbb"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N1E-I8-JYC">
                             <connections>

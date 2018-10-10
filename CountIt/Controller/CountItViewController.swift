@@ -20,6 +20,7 @@ class CountItViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        setupNavigationTitle()
         setupTableViewDelegates()
         setupEditButtonForTableView()
     }
@@ -28,6 +29,11 @@ class CountItViewController: UIViewController {
         reloadData()
         refreshDates()
         countersTableView.reloadData()
+    }
+    
+    func setupNavigationTitle() {
+        navigationItem.title = "Counters"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupTableViewDelegates() {
