@@ -34,6 +34,7 @@ class CreateCounterViewController: UIViewController {
         datePicker?.minimumDate = Date.init()
         datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         dateTextField.inputView = datePicker
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     @objc func dateChanged() {

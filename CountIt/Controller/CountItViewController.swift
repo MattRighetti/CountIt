@@ -28,6 +28,7 @@ class CountItViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         reloadData()
         refreshDates()
+        setupNavigationTitle()
         countersTableView.reloadData()
     }
     
