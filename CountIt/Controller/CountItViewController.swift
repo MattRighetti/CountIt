@@ -19,16 +19,25 @@ class CountItViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        countersTableView.delegate = self
-        countersTableView.dataSource = self
-        countersTableView.separatorStyle = .none
+        hideKeyboardWhenTappedAround()
+        setupTableViewDelegates()
+        setupEditButtonForTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         reloadData()
         refreshDates()
         countersTableView.reloadData()
+    }
+    
+    func setupTableViewDelegates() {
+        countersTableView.delegate = self
+        countersTableView.dataSource = self
+        countersTableView.separatorStyle = .none
+    }
+    
+    func setupEditButtonForTableView() {
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     func reloadData() {
@@ -47,6 +56,11 @@ class CountItViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        navigationItem.leftBarButtonItem?.title = !countersTableView.isEditing ? "Done" : "Edit"
+        countersTableView.setEditing(!countersTableView.isEditing, animated: true)
     }
     
 }
