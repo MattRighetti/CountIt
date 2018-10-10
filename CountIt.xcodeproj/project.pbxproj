@@ -13,7 +13,6 @@
 		C910050E214D1B4600BB1C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C910050D214D1B4600BB1C80 /* Assets.xcassets */; };
 		C9100511214D1B4600BB1C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */; };
 		C910051F214D1BF000BB1C80 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910051E214D1BF000BB1C80 /* Counter.swift */; };
-		C9142383216D655A00A300A2 /* DateLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9142382216D655A00A300A2 /* DateLauncher.swift */; };
 		C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */; };
 		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
 		C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */; };
@@ -27,7 +26,6 @@
 		C9100510214D1B4600BB1C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9100512214D1B4600BB1C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C910051E214D1BF000BB1C80 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
-		C9142382216D655A00A300A2 /* DateLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLauncher.swift; sourceTree = "<group>"; };
 		C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCounterCell.swift; sourceTree = "<group>"; };
 		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
 		C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				C910050A214D1B4500BB1C80 /* Main.storyboard */,
 				C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */,
-				C9142382216D655A00A300A2 /* DateLauncher.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,7 +246,6 @@
 				C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */,
 				C9100507214D1B4500BB1C80 /* AppDelegate.swift in Sources */,
 				C910051F214D1BF000BB1C80 /* Counter.swift in Sources */,
-				C9142383216D655A00A300A2 /* DateLauncher.swift in Sources */,
 				C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */,
 				C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */,
 			);

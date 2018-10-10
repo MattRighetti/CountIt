@@ -37,7 +37,9 @@ class CountItViewController: UIViewController {
     }
     
     func setupEditButtonForTableView() {
-        navigationItem.leftBarButtonItem = editButtonItem
+        if counters?.count != 0 {
+            navigationItem.leftBarButtonItem = editButtonItem
+        }
     }
     
     func reloadData() {
@@ -102,6 +104,12 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         return counterCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isEditing {
+            performSegue(withIdentifier: "addCounterSegueIdentifier", sender: self)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             do {
@@ -115,6 +123,10 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
 }
