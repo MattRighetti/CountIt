@@ -13,6 +13,7 @@ class CreateCounterViewController: UIViewController {
 
     @IBOutlet weak var counterTitleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var counterDescriptionTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var excludeLastSwitch: UISwitch!
     
@@ -30,6 +31,7 @@ class CreateCounterViewController: UIViewController {
         datePicker = UIDatePicker()
         datePicker?.backgroundColor = UIColor.white
         datePicker?.datePickerMode = .date
+        datePicker?.minimumDate = Date.init()
         datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         dateTextField.inputView = datePicker
     }
@@ -47,9 +49,12 @@ class CreateCounterViewController: UIViewController {
             do {
                 try realm.write {
                     let newCounter = Counter()
-                    newCounter.name = counterTitleTextField.text ?? "NotSet"
+                    newCounter.name = counterTitleTextField.text ?? "Undefined"
                     newCounter.tillDate = datePicker?.date
                     newCounter.excludeLast = excludeLastSwitch.isOn
+                    if let descriptionTF = counterDescriptionTextField.text {
+                        newCounter.counterDescription = descriptionTF
+                    }
                     realm.add(newCounter)
                     if let navController = self.navigationController {
                         navController.popViewController(animated: true)

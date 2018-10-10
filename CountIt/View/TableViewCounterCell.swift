@@ -12,10 +12,12 @@ class TableViewCounterCell: UITableViewCell {
     
     @IBOutlet weak var counterTitle: UILabel!
     @IBOutlet weak var counterDays: UILabel!
+    @IBOutlet weak var counterDescriptionLabel: UILabel!
     
-    func setCell(title: String, daysLeft: String) {
+    func setCell(withTitle title: String, withDays daysLeft: String, withDescription description:String) {
         setTitleLabel(withTitle: title)
         setDateLabel(withDate: daysLeft)
+        setDescriptionLabel(withDescritpion: description)
     }
     
     func setTitleLabel(withTitle title: String) {
@@ -24,6 +26,10 @@ class TableViewCounterCell: UITableViewCell {
     
     func setDateLabel(withDate date: String) {
         counterDays.text = date
+    }
+    
+    func setDescriptionLabel(withDescritpion description: String) {
+        counterDescriptionLabel.text = description
     }
 
 }

@@ -97,17 +97,10 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCounterCell
         
         if let counterAtCurrentIndexPath = counters?[indexPath.row] {
-            counterCell.setTitleLabel(withTitle: counterAtCurrentIndexPath.name)
-            counterCell.setDateLabel(withDate: String(counterAtCurrentIndexPath.daysLeft))
+            counterCell.setCell(withTitle: counterAtCurrentIndexPath.name, withDays: String(counterAtCurrentIndexPath.daysLeft), withDescription: counterAtCurrentIndexPath.counterDescription)
         }
         
         return counterCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isEditing {
-            performSegue(withIdentifier: "addCounterSegueIdentifier", sender: self)
-        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -123,10 +116,6 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
     
 }
