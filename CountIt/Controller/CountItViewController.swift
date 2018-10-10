@@ -33,7 +33,8 @@ class CountItViewController: UIViewController {
     func setupTableViewDelegates() {
         countersTableView.delegate = self
         countersTableView.dataSource = self
-        countersTableView.separatorStyle = .none
+        countersTableView.separatorStyle = .singleLine
+        countersTableView.tableFooterView = UIView(frame: .zero)
     }
     
     func setupEditButtonForTableView() {
