@@ -17,23 +17,21 @@ class CreateCounterViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var excludeLastSwitch: UISwitch!
     
-    private var datePicker: UIDatePicker?
+    private var datePicker: SlideInDatePicker!
     
     let realm = try! Realm()
     var counters: Results<Counter>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        addButton.layer.cornerRadius = 8
+        hideKeyboardWhenTappedAround()
+        setupTextFields()
+        setupKetboardObservers()
+        setupSlideInDatePicker()
+        roundButton()
+        
         counters = realm.objects(Counter.self)
         
-        datePicker = UIDatePicker()
-        datePicker?.backgroundColor = UIColor.white
-        datePicker?.datePickerMode = .date
-        datePicker?.minimumDate = Date.init()
-        datePicker?.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        dateTextField.inputView = datePicker
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -43,6 +41,55 @@ class CreateCounterViewController: UIViewController {
         if let date = datePicker?.date {
             dateTextField.text = dateFormatter.string(from: date)
         }
+    }
+    
+    func setupSlideInDatePicker() {
+        datePicker = SlideInDatePicker()
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        dateTextField.inputView = datePicker
+    }
+    
+    func setupTextFields() {
+        counterTitleTextField.autocorrectionType = .no
+        counterTitleTextField.autocapitalizationType = .words
+        dateTextField.autocorrectionType = .no
+        counterDescriptionTextField.autocorrectionType = .no
+        counterDescriptionTextField.autocapitalizationType = .sentences
+    }
+    
+    func roundButton() {
+        addButton.layer.cornerRadius = 8
+    }
+    
+    func setupKetboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIViewController.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIViewController.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if counterTitleTextField.isEditing && keyboardOverlays(textField: counterTitleTextField, keyboardSize: keyboardSize) {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else if dateTextField.isEditing && keyboardOverlays(textField: dateTextField, keyboardSize: keyboardSize) {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else if counterDescriptionTextField.isEditing && keyboardOverlays(textField: counterDescriptionTextField, keyboardSize: keyboardSize) {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardOverlays(textField: UITextField, keyboardSize: CGRect) -> Bool {
+        let keyboardHeight = keyboardSize.height
+        let textFieldY = textField.frame.height + textField.frame.origin.y
+        return textFieldY >= (self.view.frame.height - keyboardHeight) ? true : false
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
