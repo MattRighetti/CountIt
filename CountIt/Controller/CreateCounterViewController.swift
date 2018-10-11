@@ -93,7 +93,7 @@ class CreateCounterViewController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        if !counterTitleTextField.text!.isEmpty {
+        if !counterTitleTextField.text!.isEmpty && !dateTextField.text!.isEmpty {
             do {
                 try realm.write {
                     let newCounter = Counter()
@@ -111,6 +111,12 @@ class CreateCounterViewController: UIViewController {
             } catch {
                 print(error)
             }
+        } else {
+            let alert = UIAlertController(title: "Empty Fields", message: "Title and Date fields can't be empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
