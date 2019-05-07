@@ -14,7 +14,7 @@ class SlideInDatePicker: UIDatePicker {
         super.init(frame: CGRect.zero)
         self.backgroundColor = UIColor.white
         self.datePickerMode = .date
-        self.minimumDate = Date.init()
+        self.minimumDate = Date()
     }
     
     required init?(coder aDecoder: NSCoder) {
