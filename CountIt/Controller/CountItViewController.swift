@@ -100,12 +100,19 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     // Populate row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCounterCell
         
         if let counterAtCurrentIndexPath = counters?[indexPath.row] {
             counterCell.setCell(withTitle: counterAtCurrentIndexPath.name, withDays: String(counterAtCurrentIndexPath.daysLeft), withDescription: counterAtCurrentIndexPath.counterDescription)
+            if counterAtCurrentIndexPath.daysLeft < 7 {
+                // TODO
+            }
         }
         
         return counterCell

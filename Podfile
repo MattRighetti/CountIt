@@ -7,4 +7,7 @@ target 'CountIt' do
 
   # Pods for CountIt
   pod 'RealmSwift'
+  use_frameworks!
+
+pod 'ChameleonFramework/Swift'
 end

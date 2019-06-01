@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,14 @@
 		C9100511214D1B4600BB1C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C910050F214D1B4600BB1C80 /* LaunchScreen.storyboard */; };
 		C910051F214D1BF000BB1C80 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910051E214D1BF000BB1C80 /* Counter.swift */; };
 		C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */; };
+		C9363B8422A31D5F0067FB82 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8322A31D5F0067FB82 /* Montserrat-Medium.ttf */; };
+		C9363B8622A31D660067FB82 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8522A31D660067FB82 /* Montserrat-Regular.ttf */; };
+		C9363B8D22A31F4D0067FB82 /* PlayfairDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8722A31F4C0067FB82 /* PlayfairDisplay-Black.ttf */; };
+		C9363B8E22A31F4D0067FB82 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8822A31F4C0067FB82 /* PlayfairDisplay-Regular.ttf */; };
+		C9363B8F22A31F4D0067FB82 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8922A31F4C0067FB82 /* PlayfairDisplay-Bold.ttf */; };
+		C9363B9022A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8A22A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf */; };
+		C9363B9122A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8B22A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf */; };
+		C9363B9222A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8C22A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf */; };
 		C95CB580216F1670001FABFC /* SlideInDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CB57F216F1670001FABFC /* SlideInDatePicker.swift */; };
 		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
 		C9AD23AC2282228E00A4ECC4 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9AD23AA2282228E00A4ECC4 /* Montserrat-Light.ttf */; };
@@ -30,6 +38,14 @@
 		C9100512214D1B4600BB1C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C910051E214D1BF000BB1C80 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		C9189C492153D3AD007D16CC /* TableViewCounterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCounterCell.swift; sourceTree = "<group>"; };
+		C9363B8322A31D5F0067FB82 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		C9363B8522A31D660067FB82 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		C9363B8722A31F4C0067FB82 /* PlayfairDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Black.ttf"; sourceTree = "<group>"; };
+		C9363B8822A31F4C0067FB82 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		C9363B8922A31F4C0067FB82 /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		C9363B8A22A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; };
+		C9363B8B22A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C9363B8C22A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
 		C95CB57F216F1670001FABFC /* SlideInDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInDatePicker.swift; sourceTree = "<group>"; };
 		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
 		C9AD23AA2282228E00A4ECC4 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -123,8 +139,16 @@
 		C9AD23A92282228D00A4ECC4 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C9363B8522A31D660067FB82 /* Montserrat-Regular.ttf */,
+				C9363B8322A31D5F0067FB82 /* Montserrat-Medium.ttf */,
 				C9AD23AA2282228E00A4ECC4 /* Montserrat-Light.ttf */,
 				C9AD23AB2282228E00A4ECC4 /* OpenSans-Light.ttf */,
+				C9363B8722A31F4C0067FB82 /* PlayfairDisplay-Black.ttf */,
+				C9363B8C22A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf */,
+				C9363B8922A31F4C0067FB82 /* PlayfairDisplay-Bold.ttf */,
+				C9363B8B22A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf */,
+				C9363B8A22A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf */,
+				C9363B8822A31F4C0067FB82 /* PlayfairDisplay-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -209,8 +233,16 @@
 			files = (
 				C9AD23AC2282228E00A4ECC4 /* Montserrat-Light.ttf in Resources */,
 				C9100511214D1B4600BB1C80 /* LaunchScreen.storyboard in Resources */,
+				C9363B8E22A31F4D0067FB82 /* PlayfairDisplay-Regular.ttf in Resources */,
+				C9363B9022A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf in Resources */,
+				C9363B9122A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf in Resources */,
+				C9363B8622A31D660067FB82 /* Montserrat-Regular.ttf in Resources */,
 				C910050E214D1B4600BB1C80 /* Assets.xcassets in Resources */,
+				C9363B9222A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf in Resources */,
 				C9AD23AD2282228E00A4ECC4 /* OpenSans-Light.ttf in Resources */,
+				C9363B8D22A31F4D0067FB82 /* PlayfairDisplay-Black.ttf in Resources */,
+				C9363B8422A31D5F0067FB82 /* Montserrat-Medium.ttf in Resources */,
+				C9363B8F22A31F4D0067FB82 /* PlayfairDisplay-Bold.ttf in Resources */,
 				C910050C214D1B4500BB1C80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,15 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CountIt/Pods-CountIt-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CountIt/Pods-CountIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CountIt/Pods-CountIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

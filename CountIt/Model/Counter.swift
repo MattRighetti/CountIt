@@ -18,10 +18,12 @@ class Counter: Object {
     
     func countDays() {
         if let chosenDate = tillDate {
-            var calendar = Calendar.current.dateComponents([.day], from: Date.init(), to: chosenDate)
+            var calendar = Calendar.current.dateComponents([.day], from: Date(), to: chosenDate)
             daysLeft = calendar.day ?? -1
             if (excludeLast == true && daysLeft > 1) {
-                daysLeft -= 1
+                daysLeft -= 0
+            } else {
+                daysLeft += 1
             }
         }
     }
