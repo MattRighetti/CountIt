@@ -52,6 +52,7 @@ class CountItViewController: UIViewController {
     
     func reloadData() {
         counters = realm.objects(Counter.self)
+        counters = counters!.sorted(byKeyPath: "daysLeft", ascending: true)
     }
     
     func refreshDates() {
@@ -109,10 +110,7 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCounterCell
         
         if let counterAtCurrentIndexPath = counters?[indexPath.row] {
-            counterCell.setCell(withTitle: counterAtCurrentIndexPath.name, withDays: String(counterAtCurrentIndexPath.daysLeft), withDescription: counterAtCurrentIndexPath.counterDescription)
-            if counterAtCurrentIndexPath.daysLeft < 7 {
-                // TODO
-            }
+            counterCell.setCell(withTitle: counterAtCurrentIndexPath.name, withDays: String(counterAtCurrentIndexPath.daysLeft), withDescription: counterAtCurrentIndexPath.counterDescription, withColor: UIColor(hexString: counterAtCurrentIndexPath.colorHex)!)
         }
         
         return counterCell

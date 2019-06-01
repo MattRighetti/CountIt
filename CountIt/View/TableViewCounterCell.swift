@@ -17,9 +17,11 @@ class TableViewCounterCell: UITableViewCell {
     @IBOutlet weak var missingLabel: UILabel!
     @IBOutlet weak var counterView: UIView!
     
-    func setCell(withTitle title: String, withDays daysLeft: String, withDescription description:String) {
+    let mainColors = [UIColor.flatYellow, UIColor.flatRed, UIColor.flatLime, UIColor.flatMint, UIColor.flatOrange, UIColor.red, UIColor.yellow, UIColor.green, UIColor.blue]
+    
+    func setCell(withTitle title: String, withDays daysLeft: String, withDescription description:String, withColor color: UIColor) {
         roundCounterView()
-        randomGradientColorView()
+        applyGradientColor(withColor: color)
         setTitleLabel(withTitle: title)
         setDateLabel(withDate: daysLeft)
         setDescriptionLabel(withDescritpion: description)
@@ -45,11 +47,16 @@ class TableViewCounterCell: UITableViewCell {
     }
     
     func roundCounterView() {
-        counterView.layer.cornerRadius = 25
+        counterView.layer.cornerRadius = 30
+    }
+    
+    func applyGradientColor(withColor color: UIColor) {
+        counterDays.textColor = .white
+        counterView.layer.backgroundColor = color.cgColor
     }
     
     func randomGradientColorView() {
-        let randomColor = UIColor(randomFlatColorOf: .dark)
+        let randomColor = UIColor.init(randomColorIn: mainColors)!
         let lighterRandomColor = randomColor.lighten(byPercentage: 10)!
         counterDays.textColor = .white
         counterView.layer.backgroundColor = UIColor(gradientStyle:UIGradientStyle.diagonal, withFrame:counterView.frame, andColors:[lighterRandomColor, randomColor]).cgColor

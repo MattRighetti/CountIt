@@ -100,6 +100,7 @@ class CreateCounterViewController: UIViewController {
                     newCounter.name = counterTitleTextField.text ?? "Undefined"
                     newCounter.tillDate = datePicker?.date
                     newCounter.excludeLast = excludeLastSwitch.isOn
+                    newCounter.colorHex = UIColor.randomFlat.hexValue()
                     if let descriptionTF = counterDescriptionTextField.text {
                         newCounter.counterDescription = descriptionTF
                     }

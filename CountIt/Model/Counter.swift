@@ -15,6 +15,7 @@ class Counter: Object {
     @objc dynamic var excludeLast: Bool = false
     @objc dynamic var daysLeft = 0
     @objc dynamic var counterDescription: String = ""
+    @objc dynamic var colorHex: String!
     
     func countDays() {
         if let chosenDate = tillDate {
