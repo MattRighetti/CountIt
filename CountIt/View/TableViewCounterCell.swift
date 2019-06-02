@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import ChameleonFramework
 
+let mainColors = [UIColor.flatYellow, UIColor.flatRed, UIColor.flatMint, UIColor.flatOrange, UIColor.flatBlue, UIColor.flatBrown, UIColor.flatSkyBlueDark, UIColor.flatNavyBlue, UIColor.flatLimeDark, UIColor.flatSkyBlueDark, UIColor.flatWatermelon]
+
 class TableViewCounterCell: UITableViewCell {
     
     @IBOutlet weak var counterTitle: UILabel!
@@ -17,9 +19,8 @@ class TableViewCounterCell: UITableViewCell {
     @IBOutlet weak var missingLabel: UILabel!
     @IBOutlet weak var counterView: UIView!
     
-    let mainColors = [UIColor.flatYellow, UIColor.flatRed, UIColor.flatLime, UIColor.flatMint, UIColor.flatOrange, UIColor.red, UIColor.yellow, UIColor.green, UIColor.blue]
-    
     func setCell(withTitle title: String, withDays daysLeft: String, withDescription description:String, withColor color: UIColor) {
+        self.selectionStyle = .none
         roundCounterView()
         applyGradientColor(withColor: color)
         setTitleLabel(withTitle: title)
@@ -51,15 +52,10 @@ class TableViewCounterCell: UITableViewCell {
     }
     
     func applyGradientColor(withColor color: UIColor) {
+        let randomColor = color
+        let lighterRandomColor = randomColor.lighten(byPercentage: 25)!
         counterDays.textColor = .white
-        counterView.layer.backgroundColor = color.cgColor
-    }
-    
-    func randomGradientColorView() {
-        let randomColor = UIColor.init(randomColorIn: mainColors)!
-        let lighterRandomColor = randomColor.lighten(byPercentage: 10)!
-        counterDays.textColor = .white
-        counterView.layer.backgroundColor = UIColor(gradientStyle:UIGradientStyle.diagonal, withFrame:counterView.frame, andColors:[lighterRandomColor, randomColor]).cgColor
+        counterView.layer.backgroundColor = UIColor(gradientStyle: UIGradientStyle.diagonal, withFrame: counterView.frame, andColors: [lighterRandomColor, randomColor]).cgColor
     }
 
 }

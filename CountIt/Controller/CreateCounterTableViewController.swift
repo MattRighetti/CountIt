@@ -41,7 +41,7 @@ class CreateCounterTableViewController: UITableViewController {
                     newCounter.name = titleTextField.text ?? "Undefined"
                     newCounter.tillDate = counterDatePicker?.date
                     newCounter.excludeLast = excludeLastSwitch.isOn
-                    newCounter.colorHex = UIColor.randomFlat.hexValue()
+                    newCounter.colorHex = UIColor(randomColorIn: mainColors)?.hexValue()
                     
                     if let descriptionTF = descriptionTextField.text {
                         newCounter.counterDescription = descriptionTF
