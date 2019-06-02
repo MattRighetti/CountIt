@@ -22,11 +22,11 @@
 		C9363B9022A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8A22A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf */; };
 		C9363B9122A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8B22A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf */; };
 		C9363B9222A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9363B8C22A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf */; };
+		C93D25A122A3B56A0054F8AE /* CreateCounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93D25A022A3B56A0054F8AE /* CreateCounterTableViewController.swift */; };
 		C95CB580216F1670001FABFC /* SlideInDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CB57F216F1670001FABFC /* SlideInDatePicker.swift */; };
 		C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988E2A821536496001A01B9 /* CountItViewController.swift */; };
 		C9AD23AC2282228E00A4ECC4 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9AD23AA2282228E00A4ECC4 /* Montserrat-Light.ttf */; };
 		C9AD23AD2282228E00A4ECC4 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9AD23AB2282228E00A4ECC4 /* OpenSans-Light.ttf */; };
-		C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +46,11 @@
 		C9363B8A22A31F4D0067FB82 /* PlayfairDisplay-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic.ttf"; sourceTree = "<group>"; };
 		C9363B8B22A31F4D0067FB82 /* PlayfairDisplay-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C9363B8C22A31F4D0067FB82 /* PlayfairDisplay-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C93D25A022A3B56A0054F8AE /* CreateCounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterTableViewController.swift; sourceTree = "<group>"; };
 		C95CB57F216F1670001FABFC /* SlideInDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInDatePicker.swift; sourceTree = "<group>"; };
 		C988E2A821536496001A01B9 /* CountItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountItViewController.swift; sourceTree = "<group>"; };
 		C9AD23AA2282228E00A4ECC4 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		C9AD23AB2282228E00A4ECC4 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCounterViewController.swift; sourceTree = "<group>"; };
 		D8C614DFF2FCAC217834DDBA /* Pods-CountIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.release.xcconfig"; sourceTree = "<group>"; };
 		E9D44C4018F830646688450C /* Pods-CountIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountIt/Pods-CountIt.debug.xcconfig"; sourceTree = "<group>"; };
 		FFC4BF16121CA2C54E1F4F90 /* Pods_CountIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +131,7 @@
 			children = (
 				C9100506214D1B4500BB1C80 /* AppDelegate.swift */,
 				C988E2A821536496001A01B9 /* CountItViewController.swift */,
-				C9F61CFE2155A1430078DBEE /* CreateCounterViewController.swift */,
+				C93D25A022A3B56A0054F8AE /* CreateCounterTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,11 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9189C4A2153D3AD007D16CC /* TableViewCounterCell.swift in Sources */,
+				C93D25A122A3B56A0054F8AE /* CreateCounterTableViewController.swift in Sources */,
 				C9100507214D1B4500BB1C80 /* AppDelegate.swift in Sources */,
 				C910051F214D1BF000BB1C80 /* Counter.swift in Sources */,
 				C988E2A921536496001A01B9 /* CountItViewController.swift in Sources */,
 				C95CB580216F1670001FABFC /* SlideInDatePicker.swift in Sources */,
-				C9F61CFF2155A1430078DBEE /* CreateCounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
