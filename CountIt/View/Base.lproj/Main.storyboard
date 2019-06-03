@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
         <array key="OpenSans-Light.ttf">
             <string>OpenSans-Light</string>
         </array>
@@ -34,11 +37,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA0-XQ-bjS">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA0-XQ-bjS" userLabel="Round Counter View">
                                                     <rect key="frame" x="15" y="15" width="60" height="60"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dM-wm-afk" userLabel="Day Label">
+                                                            <rect key="frame" x="10.5" y="10" width="39" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RD-CM-SQN">
-                                                            <rect key="frame" x="12" y="21.5" width="36.5" height="17.5"/>
+                                                            <rect key="frame" x="12" y="29.5" width="36.5" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -46,7 +55,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="5RD-CM-SQN" firstAttribute="centerY" secondItem="KA0-XQ-bjS" secondAttribute="centerY" id="joN-t7-hDu"/>
+                                                        <constraint firstItem="5RD-CM-SQN" firstAttribute="top" secondItem="8dM-wm-afk" secondAttribute="bottom" constant="2" id="0Lu-ea-Gu7"/>
+                                                        <constraint firstItem="8dM-wm-afk" firstAttribute="top" secondItem="KA0-XQ-bjS" secondAttribute="top" constant="10" id="5yX-xo-qFn"/>
+                                                        <constraint firstItem="8dM-wm-afk" firstAttribute="centerX" secondItem="KA0-XQ-bjS" secondAttribute="centerX" id="ceh-3x-Y5R"/>
                                                         <constraint firstAttribute="height" constant="60" id="rep-1g-cfz"/>
                                                         <constraint firstAttribute="width" constant="60" id="s6u-yJ-PUB"/>
                                                         <constraint firstItem="5RD-CM-SQN" firstAttribute="centerX" secondItem="KA0-XQ-bjS" secondAttribute="centerX" id="ypK-Hp-Rrv"/>
