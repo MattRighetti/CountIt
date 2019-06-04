@@ -18,10 +18,24 @@ class CreateCounterTableViewController: UITableViewController {
     
     let realm = try! Realm()
     var counters: Results<Counter>?
+    var isInEditMode: Bool = false
+    var counter: Counter? {
+        didSet {
+            isInEditMode = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        if isInEditMode {
+            counterDatePicker.date = counter!.tillDate!
+            titleTextField.text = counter!.name
+            descriptionTextField.text = counter!.counterDescription
+            excludeLastSwitch.isOn = counter!.excludeLast
+        }
+        
     }
     
     func setupView() {
@@ -37,17 +51,28 @@ class CreateCounterTableViewController: UITableViewController {
         if !titleTextField.text!.isEmpty {
             do {
                 try realm.write {
-                    let newCounter = Counter()
-                    newCounter.name = titleTextField.text ?? "Undefined"
-                    newCounter.tillDate = counterDatePicker?.date
-                    newCounter.excludeLast = excludeLastSwitch.isOn
-                    newCounter.colorHex = UIColor(randomColorIn: mainColors)?.hexValue()
-                    
-                    if let descriptionTF = descriptionTextField.text {
-                        newCounter.counterDescription = descriptionTF
+                    if !isInEditMode {
+                        let newCounter = Counter()
+                        newCounter.name = titleTextField.text ?? "Undefined"
+                        newCounter.tillDate = counterDatePicker?.date
+                        newCounter.excludeLast = excludeLastSwitch.isOn
+                        newCounter.colorHex = UIColor(randomColorIn: mainColors)?.hexValue()
+                        
+                        if let descriptionTF = descriptionTextField.text {
+                            newCounter.counterDescription = descriptionTF
+                        }
+                        
+                        realm.add(newCounter)
+                    } else {
+                        counter!.name = titleTextField.text ?? "Undefined"
+                        counter!.tillDate = counterDatePicker?.date
+                        counter!.excludeLast = excludeLastSwitch.isOn
+                        counter!.colorHex = UIColor(randomColorIn: mainColors)?.hexValue()
+                        
+                        if let descriptionTF = descriptionTextField.text {
+                            counter!.counterDescription = descriptionTF
+                        }
                     }
-                    
-                    realm.add(newCounter)
                     
                     if let navController = self.navigationController {
                         navController.popViewController(animated: true)

@@ -9,11 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
+        </array>
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
-        </array>
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -30,11 +30,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCounterCell" rowHeight="110" id="YQv-cN-lLK" customClass="TableViewCounterCell" customModule="CountIt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCounterCell" rowHeight="105" id="YQv-cN-lLK" customClass="TableViewCounterCell" customModule="CountIt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQv-cN-lLK" id="RB6-Q8-5Lh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA0-XQ-bjS" userLabel="Round Counter View">
@@ -64,13 +64,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAU-fv-zck">
-                                                    <rect key="frame" x="23" y="80" width="44" height="18"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="13"/>
+                                                    <rect key="frame" x="20.5" y="80" width="49.5" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat Light" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3a-kF-aM7">
-                                                    <rect key="frame" x="90" y="77" width="270" height="24"/>
+                                                    <rect key="frame" x="90" y="76" width="270" height="24"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -134,7 +134,7 @@
         <!--Create Counter Table View Controller-->
         <scene sceneID="fRr-Lc-rbR">
             <objects>
-                <tableViewController id="EXK-ou-8di" customClass="CreateCounterTableViewController" customModule="CountIt" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="edit_createViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXK-ou-8di" customClass="CreateCounterTableViewController" customModule="CountIt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rL3-rW-9SU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

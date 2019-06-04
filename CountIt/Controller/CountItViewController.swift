@@ -15,6 +15,7 @@ class CountItViewController: UIViewController {
     
     let realm = try! Realm()
     let cellID = "tableViewCounterCell"
+    let viewID = "edit_createViewController"
     var counters: Results<Counter>?
 
     override func viewDidLoad() {
@@ -48,6 +49,9 @@ class CountItViewController: UIViewController {
         if counters?.count != 0 {
             navigationItem.leftBarButtonItem = editButtonItem
         }
+        
+        countersTableView.allowsSelectionDuringEditing = true
+        countersTableView.allowsSelection = false
     }
     
     func reloadData() {
@@ -102,7 +106,7 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 110
     }
     
     // Populate row
@@ -129,6 +133,18 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
                 print(error)
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let editCounterViewController = storyboard.instantiateViewController(withIdentifier: viewID) as? CreateCounterTableViewController else {
+            print("Error initializing view")
+            return
+        }
+        
+        editCounterViewController.counter = counters![indexPath.row]
+        
+        navigationController?.pushViewController(editCounterViewController, animated: true)
     }
     
 }
