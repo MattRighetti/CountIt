@@ -28,4 +28,5 @@ class Counter: Object {
             }
         }
     }
+    
 }

@@ -30,23 +30,36 @@ class CreateCounterTableViewController: UITableViewController {
         setupView()
         
         if isInEditMode {
-            counterDatePicker.date = counter!.tillDate!
-            titleTextField.text = counter!.name
-            descriptionTextField.text = counter!.counterDescription
-            excludeLastSwitch.isOn = counter!.excludeLast
+            setupViewControllerWithData(ofCounter: counter!)
         }
         
     }
     
+    /**
+     Prepares viewController main view functionalities
+     */
     func setupView() {
         counterDatePicker.minimumDate = Date()
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSave))
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         titleTextField.autocapitalizationType = .words
         descriptionTextField.autocapitalizationType = .sentences
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(handleSave))
     }
     
+    /**
+     Initialises viewController with **Counter** data
+     */
+    func setupViewControllerWithData(ofCounter counter: Counter) {
+        counterDatePicker.date = counter.tillDate!
+        titleTextField.text = counter.name
+        descriptionTextField.text = counter.counterDescription
+        excludeLastSwitch.isOn = counter.excludeLast
+    }
+    
+    /**
+     
+     */
     @objc func handleSave() {
         if !titleTextField.text!.isEmpty {
             do {
