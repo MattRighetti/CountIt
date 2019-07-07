@@ -16,17 +16,16 @@ class Counter: Object {
     @objc dynamic var daysLeft = 0
     @objc dynamic var counterDescription: String = ""
     @objc dynamic var colorHex: String!
-    
+
     func countDays() {
         if let chosenDate = tillDate {
             var calendar = Calendar.current.dateComponents([.day], from: Date(), to: chosenDate)
             daysLeft = calendar.day ?? -1
-            if (excludeLast == true && daysLeft > 1) {
+            if excludeLast == true, daysLeft > 1 {
                 daysLeft -= 0
             } else {
                 daysLeft += 1
             }
         }
     }
-    
 }

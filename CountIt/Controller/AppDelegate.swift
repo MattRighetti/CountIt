@@ -6,27 +6,22 @@
 //  Copyright © 2018 Mattia Righetti. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+
         do {
-           let _ = try Realm()
+            _ = try Realm()
         } catch {
             print(error)
         }
-        
+
         return true
     }
-
-
 }
-

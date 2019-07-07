@@ -6,13 +6,12 @@
 //  Copyright © 2018 Mattia Righetti. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class CountItViewController: UIViewController {
-    
-    @IBOutlet weak var countersTableView: UITableView!
-    
+    @IBOutlet var countersTableView: UITableView!
+
     /// Realm Database to where *Counters* are retrieved and saved
     let realm = try! Realm()
     /// ID of the reusable cell
@@ -30,14 +29,14 @@ class CountItViewController: UIViewController {
         setupEditButtonForTableView()
         setupTableViewAttributes()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_: Bool) {
         reloadData()
         refreshDates()
         setupNavigationTitle()
         countersTableView.reloadData()
     }
-    
+
     /**
      Sets the NavigationController title to "Counters" and sets it to be displayed as a large title
      */
@@ -45,7 +44,7 @@ class CountItViewController: UIViewController {
         navigationItem.title = "Counters"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
+
     /**
      Sets the **delegate** and **datasource** to this ViewController
      */
@@ -53,12 +52,12 @@ class CountItViewController: UIViewController {
         countersTableView.delegate = self
         countersTableView.dataSource = self
     }
-    
+
     func setupTableViewAttributes() {
         countersTableView.separatorStyle = .singleLine
         countersTableView.tableFooterView = UIView(frame: .zero)
     }
-    
+
     /**
      Allows to edit the tableView if there's at least one **Counter** in it, disables selection if the tableView is not in edit mode and allows
      selection if the tableView is in edit mode
@@ -67,11 +66,11 @@ class CountItViewController: UIViewController {
         if counters?.count != 0 {
             navigationItem.leftBarButtonItem = editButtonItem
         }
-        
+
         countersTableView.allowsSelectionDuringEditing = true
         countersTableView.allowsSelection = false
     }
-    
+
     /**
      Queries the Realm Database and retrieves every **Counter** stored locally, ordering them by nearest date
      */
@@ -79,7 +78,7 @@ class CountItViewController: UIViewController {
         counters = realm.objects(Counter.self)
         counters = counters!.sorted(byKeyPath: "daysLeft", ascending: true)
     }
-    
+
     /**
      Updates the **Counter.daysLeft** attribute that will be displayed in the **countersTableView**
      */
@@ -96,20 +95,19 @@ class CountItViewController: UIViewController {
             }
         }
     }
-    
+
     /**
      Changes the state of the **countersTableView**
      1. When the tableView is not in edit mode the button displays "Edit"
      2. When the tableView is in edit mode the button displays "Done"
      */
-    override func setEditing(_ editing: Bool, animated: Bool) {
+    override func setEditing(_: Bool, animated _: Bool) {
         navigationItem.leftBarButtonItem?.title = !countersTableView.isEditing ? "Done" : "Edit"
         countersTableView.setEditing(!countersTableView.isEditing, animated: true)
     }
-    
 }
 
-//MARK: - Hide keyboard when backgroud is tapped
+// MARK: - Hide keyboard when backgroud is tapped
 
 extension UIViewController {
     /**
@@ -120,46 +118,45 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
-//MARK: - TableView Methods
+// MARK: - TableView Methods
 
 extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         if let countersArray = counters {
             return countersArray.count
         } else {
             return 0
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 110
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let counterCell = countersTableView.dequeueReusableCell(withIdentifier: cellID) as! TableViewCounterCell
-        
+
         if let counterAtCurrentIndexPath = counters?[indexPath.row] {
             counterCell.setCell(withTitle: counterAtCurrentIndexPath.name, withDays: String(counterAtCurrentIndexPath.daysLeft), withDescription: counterAtCurrentIndexPath.counterDescription, withColor: UIColor(hexString: counterAtCurrentIndexPath.colorHex)!)
         }
-        
+
         return counterCell
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+    func tableView(_: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             do {
                 if let counterToBeDeleted = counters?[indexPath.row] {
                     try realm.write {
                         realm.delete(counterToBeDeleted)
                     }
-                    
+
                     countersTableView.deleteRows(at: [indexPath], with: .fade)
                 }
             } catch {
@@ -167,21 +164,20 @@ extension CountItViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-    
+
     /**
      This function is called whenever the TableView is in *editMode* and will prepare the *CreateCounterTableViewController*
      with the counter at *indexPath.row*
      */
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         guard let editCounterViewController = storyboard.instantiateViewController(withIdentifier: viewID) as? CreateCounterTableViewController else {
             print("Error initializing view")
             return
         }
-        
+
         editCounterViewController.counter = counters![indexPath.row]
         navigationController?.pushViewController(editCounterViewController, animated: true)
     }
-    
 }

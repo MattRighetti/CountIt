@@ -1,4 +1,5 @@
 //
+import ChameleonFramework
 //  TableViewCounterCell.swift
 //  CountIt
 //
@@ -7,20 +8,18 @@
 //
 import Foundation
 import UIKit
-import ChameleonFramework
 
 let mainColors = [UIColor.flatYellow, UIColor.flatRed, UIColor.flatMint, UIColor.flatOrange, UIColor.flatBlue, UIColor.flatBrown, UIColor.flatSkyBlueDark, UIColor.flatNavyBlue, UIColor.flatLimeDark, UIColor.flatSkyBlueDark, UIColor.flatWatermelon]
 
 class TableViewCounterCell: UITableViewCell {
+    @IBOutlet var counterTitle: UILabel!
+    @IBOutlet var counterDays: UILabel!
+    @IBOutlet var counterDescriptionLabel: UILabel!
+    @IBOutlet var missingLabel: UILabel!
+    @IBOutlet var counterView: UIView!
     
-    @IBOutlet weak var counterTitle: UILabel!
-    @IBOutlet weak var counterDays: UILabel!
-    @IBOutlet weak var counterDescriptionLabel: UILabel!
-    @IBOutlet weak var missingLabel: UILabel!
-    @IBOutlet weak var counterView: UIView!
-    
-    func setCell(withTitle title: String, withDays daysLeft: String, withDescription description:String, withColor color: UIColor) {
-        self.selectionStyle = .none
+    func setCell(withTitle title: String, withDays daysLeft: String, withDescription description: String, withColor color: UIColor) {
+        selectionStyle = .none
         roundCounterView()
         applyGradientColor(withColor: color)
         setTitleLabel(withTitle: title)
@@ -57,5 +56,4 @@ class TableViewCounterCell: UITableViewCell {
         counterDays.textColor = .white
         counterView.layer.backgroundColor = UIColor(gradientStyle: UIGradientStyle.diagonal, withFrame: counterView.frame, andColors: [lighterRandomColor, randomColor]).cgColor
     }
-
 }
